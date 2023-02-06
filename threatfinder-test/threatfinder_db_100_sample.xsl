@@ -3,8 +3,7 @@
 	<xsl:template match="/">
 		<html>
 			<body>
-				<h2>
-				</h2>
+				<h1>ThreatFinder Sample List</h1>
 				<table border="1">
 					<tr bgcolor="#F58025">
 						<th>Screenshot</th>
