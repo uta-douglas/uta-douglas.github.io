@@ -6,7 +6,7 @@
 				<h2>
 				</h2>
 				<table border="1">
-					<tr bgcolor="#9acd32">
+					<tr bgcolor="#F58025">
 						<th>
 						</th>
 						<th>
@@ -40,6 +40,7 @@
 										<xsl:value-of select="tweet-id" />
 									</xsl:attribute>
 									<xsl:attribute name="width">
+									200
 									</xsl:attribute>
 									</img>
 								</a>
