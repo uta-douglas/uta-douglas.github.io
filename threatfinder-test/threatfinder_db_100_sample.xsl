@@ -7,18 +7,12 @@
 				</h2>
 				<table border="1">
 					<tr bgcolor="#F58025">
-						<th>
-						</th>
-						<th>
-						</th>
-						<th>
-						</th>
-						<th>
-						</th>
-						<th>
-						</th>
-						<th>
-						</th>
+						<th>Screenshot</th>
+						<th>URL</th>
+						<th>IP Address</th>
+						<th>Alive</th>
+						<th>Location</th>
+						<th>Timestamp</th>
 					</tr>
 					<xsl:for-each select="data/tweet">
 						<tr>
