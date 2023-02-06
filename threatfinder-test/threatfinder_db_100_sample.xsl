@@ -24,7 +24,7 @@
 						<tr>
 							<td>
 								<a>
-									<xsl:attribute name="src">
+									<xsl:attribute name="href">
 										<xsl:value-of select="image-url" />
 									</xsl:attribute>
 									<xsl:attribute name="target">
@@ -33,12 +33,12 @@
 										<xsl:value-of select="tweet-id" />
 									</xsl:attribute>
 									<img>
-									<xsl:attribute name="src">
+									  <xsl:attribute name="src">
 										<xsl:value-of select="image-url" />
-									</xsl:attribute>
-									<xsl:attribute name="alt">
+									  </xsl:attribute>
+									  <xsl:attribute name="alt">
 										<xsl:value-of select="tweet-id" />
-									</xsl:attribute>
+									  </xsl:attribute>
 									<xsl:attribute name="width">
 									200
 									</xsl:attribute>
