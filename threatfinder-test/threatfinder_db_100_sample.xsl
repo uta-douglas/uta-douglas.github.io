@@ -13,8 +13,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         <th>URL</th>
         <th>Registrar Name</th>
         <th>IP Address</th>
-        <th>URL is alive</th>
-        <th>Geo co-ordinates</th>
+        <th>Alive</th>
         <th>Location</th>
         <th>Creation Time</th>
         <th>Image URL</th>
@@ -22,15 +21,14 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       </tr>
       <xsl:for-each select="data/tweet">
         <tr>
-          <td><xsl:value-of select="tweet_id"/></td>
+          <td><xsl:value-of select="tweet-id"/></td>
           <td><xsl:value-of select="url"/></td>
-          <td><xsl:value-of select="registrar_name"/></td>
-          <td><xsl:value-of select="ip_address"/></td>
+          <td><xsl:value-of select="registrar-name"/></td>
+          <td><xsl:value-of select="ip-address"/></td>
           <td><xsl:value-of select="url-alive"/></td>
-          <td><xsl:value-of select="geo-coordinates"/></td>
-          <td><xsl:value-of select="location"/></td>
-          <td><xsl:value-of select="creation_time"/></td>
-          <td><xsl:value-of select="image_url"/></td>
+          <td><xsl:value-of select="location"/><br /><xsl:value-of select="geo-coordinates"/></td>
+          <td><xsl:value-of select="creation-time"/></td>
+          <td><a href="<xsl:value-of select="image-url"/>" target="_blank"><img width="200" src="<xsl:value-of select="image-url"/>" alt="screenshot of <xsl:value-of select="tweet-id"/>"/></a></td>
         </tr>
       </xsl:for-each>
     </table>
