@@ -28,7 +28,15 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           <td><xsl:value-of select="url-alive"/></td>
           <td><xsl:value-of select="location"/><br /><xsl:value-of select="geo-coordinates"/></td>
           <td><xsl:value-of select="creation-time"/></td>
-          <td><a href="<xsl:value-of select="image-url"/>" target="_blank"><img width="200" src="<xsl:value-of select="image-url"/>" alt="screenshot of <xsl:value-of select="tweet-id"/>"/></a></td>
+          <td><img>
+                <xsl:attribute name="src">
+                  <xsl:value-of select="image-url"/>
+                </xsl:attribute>
+                <xsl:attribute name="width">
+                 200
+                </xsl:attribute >
+              </img>
+            </td>
         </tr>
       </xsl:for-each>
     </table>
