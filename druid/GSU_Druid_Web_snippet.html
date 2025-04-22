@@ -1,0 +1,19 @@
+
+<div>
+	<!-- LOAD THE CHAT BOT JS -->
+	<script defer type="text/javascript" src=https://prod-us-druid-cdn.azureedge.net/v2/druid_webchat_v2.js></script>
+
+	<!-- Init the webchat component on document load -->
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", function(event) {
+		DruidWebchat_v2.init({
+		//Common settings for the bot on DRUID Production (gs)
+		botId: "c141ee73-b271-497d-766d-08db91b89594",
+		baseUrl: "https://druidapi.us.druidplatform.com",
+		queryParams: "SessionId=1234", // pass queryParams to AuthorizeAsync method
+		});
+		});
+	</script>  
+</div>
+
+
