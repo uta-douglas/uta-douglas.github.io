@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Injections - OIT Business Continuity and Information Security Tabletop Exercise</title>
+        <title>Injections - Business Continuity Tabletop Exercise</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/fontawesome.min.css" rel="stylesheet">
         <link href="../css/brands.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">OIT Business Continuity and Information Security Tabletop Exercise</a>
+                <a class="navbar-brand" href="..">Business Continuity Tabletop Exercise</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -81,12 +81,22 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#injects-flow" class="nav-link">Injects &amp; Flow:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h2 id="injects-flow">Injects &amp; Flow:</h2>
+<ul>
+<li>T0 (Symptoms): Service Desk reports "random" login failures. Some users connect fine (their traffic stayed symmetric), others fail.</li>
+<li>T+30 (Network Discovery): Network team sees the SRX cluster status flapping or "Dual Active" errors in the logs.</li>
+<li>T+45 (Security Twist): Security Ops sees a massive spike in "Deny" logs on the ERB-SRX for legitimate return traffic, initially looking like a DDoS or spoofing attack.</li>
+</ul></div>
             </div>
         </div>
 
