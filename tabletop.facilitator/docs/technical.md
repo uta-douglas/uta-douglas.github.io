@@ -1,5 +1,12 @@
 # Technical Summary
 
+Scenario: The "Split-Brain" Firewall Fracture
+Theme: Asymmetric Routing & Identity Failure
+ 
+## Technical Context: 
+Your Security Layer relies on a geographically distributed cluster of two SRX5600s (ERB and SEIR) connected by redundant Control and Fabric links.
+ 
+
 ## The Incident:
 A degradation in the fiber path between ERB and SEIR causes the Control Links to fail intermittently while the Fabric links remain up (or vice versa). This puts the SRX cluster into a “dual-primary” or “split-brain” scenario where both firewalls believe they are the active master for the same Redundancy Groups (Reth interfaces).
 
