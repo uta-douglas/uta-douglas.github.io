@@ -4,8 +4,8 @@ author:
   email: douglas@uta.edu
 description: >- # this means to ignore newlines until "baseurl:"
   February 2026 OIT Business Continuity and Information Security Tabletop Exercise
-baseurl: "/tabletop" # the subpath of your site, e.g. /blog
+baseurl: "/tabletop" 
 timezone: America/Chicago
-url: "https://uta-douglas.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://uta-douglas.github.io" 
 twitter_username: douglas_uta
 github_username:  uta-douglas
