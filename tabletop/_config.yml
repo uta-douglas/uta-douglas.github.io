@@ -11,6 +11,16 @@ social-network-links:
   twitter: douglas_uta
   github:  uta-douglas
 
+###############################################
+# --- List of links in the navigation bar --- #
+###############################################
+
+navbar-links:
+  Scenario: "aboutme"
+  Injections:
+    - T+0: "inj00"
+    - T+30: "inj30"
+    - T+45: "inj45"
 
 # Select which social network share links to show in posts
 share-links-active:
@@ -38,6 +48,16 @@ footer-text-col: "#777777"
 footer-link-col: "#404040"
 footer-hover-col: "#0085A1"
 
+
+################
+# --- Misc --- #
+################
+
+# Ruby Date Format to show dates of posts
+date_format: "%B %-d, %Y"
+
+# Facebook App ID
+#fb_app_id: ""
 
 #################################################################################
 # --- You don't need to touch anything below here (but you can if you want) --- #
