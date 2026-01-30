@@ -1,5 +1,6 @@
-# OIT Business Continuity and Information Security Tabletop Exercise
+# Tabletop Exercise
 
+## Exec Summary
 
 ## Scenario: The "Split-Brain" Firewall Fracture
 ## Theme: Asymmetric Routing & Identity Failure
@@ -15,10 +16,3 @@ A degradation in the fiber path between ERB and SEIR causes the Control Links to
 * The Failure: Because the Control Link is degraded, the session table entry created on SEIR-SRX hasn't synced to ERB-SRX. The ERB-SRX drops the return packet as an "invalid state/TCP sequence."
 * Identity Impact: Users can initiate logins, but the "Callback" from the cloud provider (MFA token, SAML assertion) is dropped.
 
-## Injects & Flow:
-* T0 (Symptoms): Service Desk reports "random" login failures. Some users connect fine (their traffic stayed symmetric), others fail.
-* T+30 (Network Discovery): Network team sees the SRX cluster status flapping or "Dual Active" errors in the logs.
-* T+45 (Security Twist): Security Ops sees a massive spike in "Deny" logs on the ERB-SRX for legitimate return traffic, initially looking like a DDoS or spoofing attack.
-
-## Root Cause (Malicious Variant): 
-An attacker compromised a management account and administratively shut down the specific ports used for the Cluster Control Link (ports FPC1-HA0, etc.), attempting to disrupt logs before exfiltrating data.
