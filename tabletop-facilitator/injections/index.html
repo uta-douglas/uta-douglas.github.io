@@ -82,8 +82,16 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#injects-flow" class="nav-link">Injects &amp; Flow:</a>
+            <li class="nav-item" data-bs-level="1"><a href="#injects-flow" class="nav-link">Injects &amp; Flow:</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#initial-scenario" class="nav-link">Initial Scenario</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#timed-injections" class="nav-link">Timed Injections</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -91,12 +99,22 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="injects-flow">Injects &amp; Flow:</h2>
-<ul>
-<li>T0 (Symptoms): Service Desk reports "random" login failures. Some users connect fine (their traffic stayed symmetric), others fail.</li>
-<li>T+30 (Network Discovery): Network team sees the SRX cluster status flapping or "Dual Active" errors in the logs.</li>
-<li>T+45 (Security Twist): Security Ops sees a massive spike in "Deny" logs on the ERB-SRX for legitimate return traffic, initially looking like a DDoS or spoofing attack.</li>
-</ul></div>
+<h1 id="injects-flow">Injects &amp; Flow:</h1>
+<h2 id="initial-scenario">Initial Scenario</h2>
+<p><a href="/tabletop/">Participant's Page</a> link will be given to each of the participants. </p>
+<h2 id="timed-injections">Timed Injections</h2>
+<h3 id="injection-1-t0-symptoms"><a href="/tabletop/injection1/">Injection 1</a> T+0 (Symptoms):</h3>
+<p>Service Desk reports "random" login failures. Some users connect fine (their traffic stayed symmetric), others fail.</p>
+<p>Conspirators:
+* Service Desk Agent</p>
+<h3 id="injection-2-t30-network-discovery"><a href="/tabletop/injection2/">Injection 2</a> T+30 (Network Discovery)</h3>
+<p>Network team sees the SRX cluster status flapping or "Dual Active" errors in the logs.</p>
+<p>Conspirators:
+* Network Team Member</p>
+<h3 id="injection-3-t45-security-twist"><a href="/tabletop/injection3/">Injection 3</a> T+45 (Security Twist)</h3>
+<p>Security Ops sees a massive spike in "Deny" logs on the ERB-SRX for legitimate return traffic, initially looking like a DDoS or spoofing attack.</p>
+<p>Conspirators:
+* OpSec Team Member</p></div>
             </div>
         </div>
 
