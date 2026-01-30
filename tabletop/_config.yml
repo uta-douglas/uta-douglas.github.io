@@ -16,7 +16,7 @@ social-network-links:
 ###############################################
 
 navbar-links:
-  Scenario: "aboutme"
+  Scenario: "scenario"
   Injections:
     - T+0: "inj00"
     - T+30: "inj30"
