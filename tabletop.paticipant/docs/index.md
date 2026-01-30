@@ -2,17 +2,20 @@
 
 ## Exec Summary
 
-## Scenario: The "Split-Brain" Firewall Fracture
-## Theme: Asymmetric Routing & Identity Failure
- 
-## Technical Context: 
-Your Security Layer relies on a geographically distributed cluster of two SRX5600s (ERB and SEIR) connected by redundant Control and Fabric links.
- 
-## The Incident: 
-A degradation in the fiber path between ERB and SEIR causes the Control Links to fail intermittently while the Fabric links remain up (or vice versa). This puts the SRX cluster into a "dual-primary" or "split-brain" scenario where both firewalls believe they are the active master for the same Redundancy Groups (Reth interfaces).
+*Feburary 13, 2026* - Today's event is part of OIT's regular cadence to test out the Business Continuity Plan. Every 6 months we have a major tabletop exercise to challenge a particular area of OIT. This time we will be combining the effort with Information Security office to make this a joint exercise. 
 
-## Why this breaks Identity/Cloud:
-* Asymmetric Routing: Traffic destined for the Internet (e.g., an SSO request to Azure AD) leaves via the SEIR-SRX (Node 0). The return traffic from the ISP enters via the ERB-MX960 and is handed to the ERB-SRX (Node 1).
-* The Failure: Because the Control Link is degraded, the session table entry created on SEIR-SRX hasn't synced to ERB-SRX. The ERB-SRX drops the return packet as an "invalid state/TCP sequence."
-* Identity Impact: Users can initiate logins, but the "Callback" from the cloud provider (MFA token, SAML assertion) is dropped.
+## Ground Rules
 
+### Timing
+The exercise will be two hours long with a 30-minute recap session. The exercise takes place in real time. Additional information may become available during the exercise in the form of "injections".
+
+### Participants
+The participants will meet in a specific location but should simulate their normal workspace including access to laptop and other resources.
+
+### Facilitators
+The facilitators will provide scenario information and be able to answer questions related to the simulated event. 
+
+### Conspirators
+A list of conspirators will be made available. These conspirators will be given specific scenario details if called upon by participants. They would typically not be in the room but available via chat, email, or phone to simulate a real world experience.
+
+ 
