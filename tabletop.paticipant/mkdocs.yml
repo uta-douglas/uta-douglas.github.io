@@ -7,6 +7,5 @@ nav:
 
 stylesheets:
 extra.css:
-.nav-link[rel="prev"] {
-display: none;
-}
+.nav-link[rel="next"] {display: none;}
+.nav-link[rel="prev"] {display: none;}
