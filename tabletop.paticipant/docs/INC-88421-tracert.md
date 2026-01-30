@@ -1,10 +1,9 @@
-# Trace Analysis: Dr. Aris Thorne
+# INC-88421: Trace Analysis: Dr. Aris Thorne
 
-Target: sso.university.edu (Simulated Cloud/Azure Endpoint)
-Status: Request timed out at the edge.
+**Target:** sso.university.edu (Simulated Cloud/Azure Endpoint)  
+**Status:** Request timed out at the edge.  
 
-```
-Tracing route to sso.uta.edu [23.102.165.255]
+```Tracing route to sso.uta.edu [23.102.165.255]
 over a maximum of 30 hops:
 
   1    <1 ms    <1 ms    <1 ms  10.15.20.1 (ERB-Floor-Gateway)
@@ -14,5 +13,6 @@ over a maximum of 30 hops:
   5     * * * Request timed out.
   6     * * * Request timed out.
   7   ^C
+  ```  
   
-  ```
+  
