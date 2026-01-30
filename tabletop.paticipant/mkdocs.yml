@@ -1,6 +1,3 @@
 site_name: Business Continuity Tabletop Exercise
 nav: 
- - Faciliator Home: index.md
- - Technical Details: technical.md
- - Injections: injections.md
- - Root Cause: root.md
+ - Participant Home: index.md

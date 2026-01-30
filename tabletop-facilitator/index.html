@@ -4,27 +4,27 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
         
         
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Root Cause - Business Continuity Tabletop Exercise</title>
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/fontawesome.min.css" rel="stylesheet">
-        <link href="../css/brands.min.css" rel="stylesheet">
-        <link href="../css/solid.min.css" rel="stylesheet">
-        <link href="../css/v4-font-face.min.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>Business Continuity Tabletop Exercise</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
         <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
     </head>
 
-    <body>
+    <body class="homepage">
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="..">Business Continuity Tabletop Exercise</a>
+                <a class="navbar-brand" href=".">Business Continuity Tabletop Exercise</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,16 +35,16 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href=".." class="nav-link">Faciliator Home</a>
+                                <a href="." class="nav-link active" aria-current="page">Faciliator Home</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../technical/" class="nav-link">Technical Details</a>
+                                <a href="technical.md" class="nav-link">Technical Details</a>
                             </li>
                             <li class="nav-item">
-                                <a href="../injections/" class="nav-link">Injections</a>
+                                <a href="injections.md" class="nav-link">Injections</a>
                             </li>
                             <li class="nav-item">
-                                <a href="./" class="nav-link active" aria-current="page">Root Cause</a>
+                                <a href="root.md" class="nav-link">Root Cause</a>
                             </li>
                         </ul>
 
@@ -54,16 +54,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../injections/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -82,8 +72,32 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-bs-level="2"><a href="#root-cause-malicious-variant" class="nav-link">Root Cause (Malicious Variant):</a>
+            <li class="nav-item" data-bs-level="1"><a href="#tabletop-exercise" class="nav-link">Tabletop Exercise</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#exec-summary" class="nav-link">Exec Summary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#scenario-the-split-brain-firewall-fracture" class="nav-link">Scenario: The "Split-Brain" Firewall Fracture</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#theme-asymmetric-routing-identity-failure" class="nav-link">Theme: Asymmetric Routing &amp; Identity Failure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#technical-context" class="nav-link">Technical Context:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-incident" class="nav-link">The Incident:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#why-this-breaks-identitycloud" class="nav-link">Why this breaks Identity/Cloud:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -91,8 +105,20 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="root-cause-malicious-variant">Root Cause (Malicious Variant):</h2>
-<p>An attacker compromised a management account and administratively shut down the specific ports used for the Cluster Control Link (ports FPC1-HA0, etc.), attempting to disrupt logs before exfiltrating data.</p></div>
+<h1 id="tabletop-exercise">Tabletop Exercise</h1>
+<h2 id="exec-summary">Exec Summary</h2>
+<h2 id="scenario-the-split-brain-firewall-fracture">Scenario: The "Split-Brain" Firewall Fracture</h2>
+<h2 id="theme-asymmetric-routing-identity-failure">Theme: Asymmetric Routing &amp; Identity Failure</h2>
+<h2 id="technical-context">Technical Context:</h2>
+<p>Your Security Layer relies on a geographically distributed cluster of two SRX5600s (ERB and SEIR) connected by redundant Control and Fabric links.</p>
+<h2 id="the-incident">The Incident:</h2>
+<p>A degradation in the fiber path between ERB and SEIR causes the Control Links to fail intermittently while the Fabric links remain up (or vice versa). This puts the SRX cluster into a "dual-primary" or "split-brain" scenario where both firewalls believe they are the active master for the same Redundancy Groups (Reth interfaces).</p>
+<h2 id="why-this-breaks-identitycloud">Why this breaks Identity/Cloud:</h2>
+<ul>
+<li>Asymmetric Routing: Traffic destined for the Internet (e.g., an SSO request to Azure AD) leaves via the SEIR-SRX (Node 0). The return traffic from the ISP enters via the ERB-MX960 and is handed to the ERB-SRX (Node 1).</li>
+<li>The Failure: Because the Control Link is degraded, the session table entry created on SEIR-SRX hasn't synced to ERB-SRX. The ERB-SRX drops the return packet as an "invalid state/TCP sequence."</li>
+<li>Identity Impact: Users can initiate logins, but the "Callback" from the cloud provider (MFA token, SAML assertion) is dropped.</li>
+</ul></div>
             </div>
         </div>
 
@@ -100,13 +126,13 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script>
-            var base_url = "..",
+            var base_url = ".",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../js/base.js"></script>
-        <script src="../search/main.js"></script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -171,3 +197,8 @@
 
     </body>
 </html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-01-30 19:21:56.888880+00:00
+-->
