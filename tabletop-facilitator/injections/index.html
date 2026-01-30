@@ -92,6 +92,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#responses" class="nav-link">Responses</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -106,7 +110,7 @@
 <h3 id="injection-1-t0-symptoms"><a href="/tabletop/injection1/">Injection 1</a> T+0 (Symptoms):</h3>
 <p>Service Desk reports "random" login failures. Some users connect fine (their traffic stayed symmetric), others fail.</p>
 <p>Conspirators:
-* Service Desk Agent</p>
+* Service Desk - Steph D'Adamo</p>
 <h3 id="injection-2-t30-network-discovery"><a href="/tabletop/injection2/">Injection 2</a> T+30 (Network Discovery)</h3>
 <p>Network team sees the SRX cluster status flapping or "Dual Active" errors in the logs.</p>
 <p>Conspirators:
@@ -114,7 +118,10 @@
 <h3 id="injection-3-t45-security-twist"><a href="/tabletop/injection3/">Injection 3</a> T+45 (Security Twist)</h3>
 <p>Security Ops sees a massive spike in "Deny" logs on the ERB-SRX for legitimate return traffic, initially looking like a DDoS or spoofing attack.</p>
 <p>Conspirators:
-* OpSec Team Member</p></div>
+* OpSec Team Member</p>
+<h2 id="responses">Responses</h2>
+<p>If network team asks for "more logs," you can tell them that Dr. Thorne is technically savvy and has already provided a tracert that looks normal (because ICMP might follow a different path or succeed where TCP state fails), which usually serves as a great "red herring" to see if they rely too much on basic pings!
+<a href="/tabletop/INC-88421-tracert">Dr. Thorne's tracert</a></p></div>
             </div>
         </div>
 

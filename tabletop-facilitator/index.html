@@ -88,26 +88,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#scenario-the-split-brain-firewall-fracture" class="nav-link">Scenario: The "Split-Brain" Firewall Fracture</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#theme-asymmetric-routing-identity-failure" class="nav-link">Theme: Asymmetric Routing &amp; Identity Failure</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#technical-context" class="nav-link">Technical Context:</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#the-incident" class="nav-link">The Incident:</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#why-this-breaks-identitycloud" class="nav-link">Why this breaks Identity/Cloud:</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -116,19 +96,7 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="tabletop-exercise">Tabletop Exercise</h1>
-<h2 id="exec-summary">Exec Summary</h2>
-<h2 id="scenario-the-split-brain-firewall-fracture">Scenario: The "Split-Brain" Firewall Fracture</h2>
-<h2 id="theme-asymmetric-routing-identity-failure">Theme: Asymmetric Routing &amp; Identity Failure</h2>
-<h2 id="technical-context">Technical Context:</h2>
-<p>Your Security Layer relies on a geographically distributed cluster of two SRX5600s (ERB and SEIR) connected by redundant Control and Fabric links.</p>
-<h2 id="the-incident">The Incident:</h2>
-<p>A degradation in the fiber path between ERB and SEIR causes the Control Links to fail intermittently while the Fabric links remain up (or vice versa). This puts the SRX cluster into a "dual-primary" or "split-brain" scenario where both firewalls believe they are the active master for the same Redundancy Groups (Reth interfaces).</p>
-<h2 id="why-this-breaks-identitycloud">Why this breaks Identity/Cloud:</h2>
-<ul>
-<li>Asymmetric Routing: Traffic destined for the Internet (e.g., an SSO request to Azure AD) leaves via the SEIR-SRX (Node 0). The return traffic from the ISP enters via the ERB-MX960 and is handed to the ERB-SRX (Node 1).</li>
-<li>The Failure: Because the Control Link is degraded, the session table entry created on SEIR-SRX hasn't synced to ERB-SRX. The ERB-SRX drops the return packet as an "invalid state/TCP sequence."</li>
-<li>Identity Impact: Users can initiate logins, but the "Callback" from the cloud provider (MFA token, SAML assertion) is dropped.</li>
-</ul></div>
+<h2 id="exec-summary">Exec Summary</h2></div>
             </div>
         </div>
 
@@ -210,5 +178,5 @@
 
 <!--
 MkDocs version : 1.6.1
-Build Date UTC : 2026-01-30 22:22:17.633653+00:00
+Build Date UTC : 2026-01-30 23:05:56.235947+00:00
 -->

@@ -84,6 +84,10 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#technical-summary" class="nav-link">Technical Summary</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#technical-context" class="nav-link">Technical Context:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-bs-level="2"><a href="#the-incident" class="nav-link">The Incident:</a>
               <ul class="nav flex-column">
               </ul>
@@ -100,6 +104,10 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="technical-summary">Technical Summary</h1>
+<p>Scenario: The "Split-Brain" Firewall Fracture
+Theme: Asymmetric Routing &amp; Identity Failure</p>
+<h2 id="technical-context">Technical Context:</h2>
+<p>Your Security Layer relies on a geographically distributed cluster of two SRX5600s (ERB and SEIR) connected by redundant Control and Fabric links.</p>
 <h2 id="the-incident">The Incident:</h2>
 <p>A degradation in the fiber path between ERB and SEIR causes the Control Links to fail intermittently while the Fabric links remain up (or vice versa). This puts the SRX cluster into a “dual-primary” or “split-brain” scenario where both firewalls believe they are the active master for the same Redundancy Groups (Reth interfaces).</p>
 <h2 id="why-this-breaks-identitycloud">Why this breaks Identity/Cloud:</h2>
