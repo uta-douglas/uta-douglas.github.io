@@ -107,6 +107,27 @@
             </li>
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#technical-responses" class="nav-link">Technical Responses</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#srx-troubleshooting" class="nav-link">SRX Troubleshooting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#log-entry" class="nav-link">Log entry</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-network-path-reality" class="nav-link">The "Network Path" Reality</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#resolution-steps-how-they-win" class="nav-link">Resolution Steps (How they "Win")</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -129,7 +150,62 @@ Theme: Asymmetric Routing &amp; Identity Failure</p>
 <h2 id="tracert-trap-for-network-team"><code>tracert</code> "Trap" for Network Team:</h2>
 <p>The Success: The trace successfully leaves the local building gateway (10.15.20.1) and hits the internal core.</p>
 <p>The Failure: It dies at Hop 4.</p>
-<p>The Reality: In a split-brain SRX scenario, the packet actually did go out via the SEIR-SRX. However, when the response came back to the ERB-SRX, the firewall dropped it because it didn't recognize the session. To the user's computer, it looks like the destination is "down," but to the network team, the logs will show the packet exiting the building just fine.</p></div>
+<p>The Reality: In a split-brain SRX scenario, the packet actually did go out via the SEIR-SRX. However, when the response came back to the ERB-SRX, the firewall dropped it because it didn't recognize the session. To the user's computer, it looks like the destination is "down," but to the network team, the logs will show the packet exiting the building just fine.</p>
+<h1 id="technical-responses">Technical Responses</h1>
+<h2 id="srx-troubleshooting">SRX Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Expected Output (The "Clue")</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>show chassis cluster status</code></td>
+<td>Redundancy Group 0/1: Both Nodes show as primary. This confirms the "Dual-Primary" state.</td>
+</tr>
+<tr>
+<td><code>show chassis cluster interfaces</code></td>
+<td>Control Link (em0/fab0): Shows as down or disabled, while Fabric links might show up.</td>
+</tr>
+<tr>
+<td><code>show chassis cluster statistics</code></td>
+<td>High number of heartbeat timeouts or dropped control packets.</td>
+</tr>
+<tr>
+<td><code>show security flow session</code></td>
+<td>A session exists for the user on Node 0 (SEIR), but no session exists on Node 1 (ERB).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="log-entry">Log entry</h2>
+<p>If the team looks at the Syslogs or a Packet Capture (PCAP) on the ERB-SRX (Node 1), they should see the following drops:</p>
+<p>Log Entry: <code>RT_FLOW_SESSION_DENY: session rejected 192.168.x.x -&gt; 40.126.32.138 reason: TCP state check failed / No session match</code></p>
+<p>Explanation: The firewall is receiving the Return packet (SYN-ACK) from Azure/Okta, but since it didn't see the Initial packet (SYN), it drops it as a security violation.</p>
+<h2 id="the-network-path-reality">The "Network Path" Reality</h2>
+<p>To guide the team if they get stuck, you can "leak" information about the fiber path:</p>
+<ul>
+<li>
+<p>Physical Layer: A construction crew near the SEIR building is doing utility work. They haven't cut the fiber, but they've bent a conduit, causing high attenuation (dB loss) on the Control Link fibers.</p>
+</li>
+<li>
+<p>The Flap: The loss is just bad enough that small heartbeat packets fail, but the higher-power optics for the data fabric are still punching through, keeping the data path "alive" but un-synchronized.</p>
+</li>
+</ul>
+<h2 id="resolution-steps-how-they-win">Resolution Steps (How they "Win")</h2>
+<p>The team successfully resolves the exercise if they perform these actions in order:</p>
+<ul>
+<li>
+<p>Isolate the Nodes: Manually force one node into secondary or disabled state to stop the dual-primary conflict (e.g., set chassis cluster redundancy-group 1 node 0 priority 255).</p>
+</li>
+<li>
+<p>Force Symmetry: Steer all traffic to one building (ERB or SEIR) by adjusting BGP/OSPF costs so that traffic enters and leaves the same firewall.</p>
+</li>
+<li>
+<p>Dispatch Fiber Techs: Identify that the issue is not software/config, but a physical layer degradation between the two data centers.</p>
+</li>
+</ul></div>
             </div>
         </div>
 
