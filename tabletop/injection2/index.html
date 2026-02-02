@@ -55,7 +55,15 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#injection-2" class="nav-link">Injection #2</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#network-discovery" class="nav-link">Network Discovery</a>
+            <li class="nav-item" data-bs-level="2"><a href="#network-discovery-initial-findings" class="nav-link">Network Discovery - Initial Findings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#immediate-impacts-reported" class="nav-link">Immediate Impacts Reported:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#key-troubleshooting-clues-for-the-network-team" class="nav-link">Key Troubleshooting Clues (for the Network Team):</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -67,9 +75,22 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="injection-2">Injection #2</h1>
-<p><em>Time: 2026-02-13 1:30 PM</em></p>
-<h2 id="network-discovery">Network Discovery</h2>
-<p>Network team sees the SRX cluster status flapping or "Dual Active" errors in the logs.</p></div>
+<p><em>Time: 2026-02-13 1:30 PM (15 minutes into the exercise)</em></p>
+<h2 id="network-discovery-initial-findings">Network Discovery - Initial Findings</h2>
+<p><strong>Observation:</strong> The network team reports seeing the SRX cluster status flapping, accompanied by "Dual Active" errors in the firewall logs.</p>
+<p><strong>Technical Detail:</strong> This indicates a "Split-Brain" Firewall Fracture. A degradation in the fiber path between the two SRX5600 firewalls (ERB and SEIR) is causing the Control Links (em0/fab0 interface) to fail intermittently. As a result, both firewalls are now operating in a dual-primary state, each believing it is the active master.</p>
+<h2 id="immediate-impacts-reported">Immediate Impacts Reported:</h2>
+<ul>
+<li><strong>Identity Failure:</strong> Users can initiate login processes (e.g., to Azure AD), but the crucial callback from the cloud provider (containing MFA tokens, SAML assertions, etc.) is being dropped before it reaches the user, preventing successful authentication.</li>
+<li><strong>Asymmetric Routing / Session Drops:</strong> Traffic initiated by users leaves the network via one SRX (e.g., SEIR-SRX), but the return traffic attempts to enter via the other (e.g., ERB-SRX). Due to the control link failure, the session table is not being synchronized between the two firewalls. The ERB-SRX, not having seen the initial connection, drops the return packet with an "invalid state/TCP sequence" error.</li>
+<li><strong>Misleading <code>tracert</code> Output:</strong> Preliminary <code>tracert</code> attempts might show successful outbound connectivity from the local building, but then mysteriously "die" at an internal hop. This is deceiving, as the outbound packet did leave, but its return was dropped by the other firewall.</li>
+</ul>
+<h2 id="key-troubleshooting-clues-for-the-network-team">Key Troubleshooting Clues (for the Network Team):</h2>
+<ul>
+<li>Running <code>show chassis cluster status</code> on either SRX would likely reveal both nodes reporting as <code>primary</code> for Redundancy Group 0 and 1.</li>
+<li><code>show chassis cluster interfaces</code> would probably show the Control Link (em0/fab0) as <code>down</code> or <code>disabled</code>.</li>
+<li>Syslogs or Packet Captures (PCAP) on the ERB-SRX (the firewall dropping return traffic) would contain <code>RT_FLOW_SESSION_DENY</code> entries, specifically stating <code>session rejected ... reason: TCP state check failed / No session match</code>. This confirms the firewall is receiving return packets for sessions it didn't initiate.</li>
+</ul></div>
             </div>
         </div>
 

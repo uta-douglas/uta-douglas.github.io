@@ -55,7 +55,7 @@
             
             <li class="nav-item" data-bs-level="1"><a href="#injection-3" class="nav-link">Injection #3</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#security-twist" class="nav-link">Security Twist</a>
+            <li class="nav-item" data-bs-level="2"><a href="#security-twist-user-impact" class="nav-link">Security Twist &amp; User Impact</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -67,9 +67,12 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="injection-3">Injection #3</h1>
+<p><em>This injection is received by participants 30 minutes into the business continuity tabletop exercise.</em></p>
 <p><em>Time: 2026-02-13 1:45 PM</em></p>
-<h2 id="security-twist">Security Twist</h2>
-<p>Security Ops sees a massive spike in "Deny" logs on the ERB-SRX for legitimate return traffic, initially looking like a DDoS or spoofing attack.</p></div>
+<h2 id="security-twist-user-impact">Security Twist &amp; User Impact</h2>
+<p>Security Ops sees a massive spike in "Deny" logs on the ERB-SRX for what appears to be legitimate return traffic from cloud services. This initially looks like a DDoS or spoofing attack.</p>
+<p>Simultaneously, the help desk is being flooded with calls from users reporting they cannot log in to any cloud-based applications. Users state that they can enter their username and password, but the multi-factor authentication (MFA) prompt never appears, or the login times out.</p>
+<p>Initial triage from the network team suggests that internal network traffic is flowing normally, and the issue seems to be isolated to external cloud services. A <code>tracert</code> from a user's machine to an external service like <code>portal.azure.com</code> seems to die just outside the corporate network.</p></div>
             </div>
         </div>
 
