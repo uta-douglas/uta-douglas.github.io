@@ -26,6 +26,11 @@ Conspirators:
 
 * OpSec Team Member
 
+## Additional Conspirators
+
+* Baviera, Gregory J
+* Morgan, Randy
+
 
 ## Responses
 
