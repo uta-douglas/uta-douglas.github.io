@@ -40,7 +40,6 @@ The observers may be checking on the progress of the event as they are able to d
 *   Jennifer Higgins
 *   Ana M Millan
 *   Carolyn Nee
-*   Cheryl Nifong
 *   Lee Pierce
 *   Howard Prince
 *   Renee Stanley
