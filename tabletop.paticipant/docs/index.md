@@ -26,7 +26,6 @@ A list of conspirators will be made available. These conspirators will be given 
 *   Steph D’Adamo – service desk and interface from the customer experience
 *   Steven Rothchild – OpCenter and server logs
 *   Nobuo Dash – OpSec and anything related to the malicious actor 
-*   Lenny Cruz - network and systems
 *   Gregory J Baviera - Information Security
 *   Randy Morgan - Information Security
 
@@ -35,6 +34,7 @@ The observers may be checking on the progress of the event as they are able to d
 
 *   Deepika Chalemela
 *   Chris Cox
+*   Tom George
 *   Edward A Gonzales
 *   Jason T Hardy
 *   Jennifer Higgins
@@ -49,4 +49,5 @@ The observers may be checking on the progress of the event as they are able to d
 The facilitators will provide scenario information and be able to answer questions related to the simulated event. 
 
 *   Douglas Bergère
+*   Lenny Cruz - network and systems
 *   Robert Leitgeb
