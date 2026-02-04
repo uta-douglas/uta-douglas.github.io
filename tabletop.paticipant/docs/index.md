@@ -12,10 +12,10 @@ The exercise will be two hours long with a 30-minute recap session. The exercise
 ### Participants  
 The participants will meet in a specific location but should simulate their normal workspace including access to laptop and other resources.
 
+*   Brandon Bunger
 *   Ashley Downey  
 * 	Joni Fletcher
 *   Jake Helsley
-*   Kameron Ingrando
 *   Kevin Parker
 *   Jose Segura
 *   Thomas Shipman  
