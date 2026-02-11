@@ -1,6 +1,6 @@
 # INC-88421: Trace Analysis: Dr. Aris Thorne
 
-**Target:** sso.university.edu (Simulated Cloud/Azure Endpoint)  
+**Target:** sso.uta.edu (Simulated Cloud/Azure Endpoint)  
 **Status:** Request timed out at the edge. 
 
 --- 
