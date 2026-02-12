@@ -9,3 +9,7 @@ Security Ops sees a massive spike in "Deny" logs on the ERB-SRX for what appears
 Simultaneously, the help desk is being flooded with calls from users reporting they cannot log in to any cloud-based applications. Users state that they can enter their username and password, but the multi-factor authentication (MFA) prompt never appears, or the login times out.
 
 Initial triage from the network team suggests that internal network traffic is flowing normally, and the issue seems to be isolated to external cloud services. A `tracert` from a user's machine to an external service like `portal.azure.com` seems to die just outside the corporate network.
+
+![Splunk Log 1](splunklog1.png)
+![Splunk Log 2](splunklog2.png)
+![Splunk Log 3](splunklog3.png)
