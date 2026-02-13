@@ -3,7 +3,7 @@ nav:
  - Participant Home: index.md
  - Injection 1 : injection1.md
  - Injection 2 : injection2.md
-# - Injection 3 : injection3.md
+ - Injection 3 : injection3.md
 
 stylesheets:
 extra.css:
