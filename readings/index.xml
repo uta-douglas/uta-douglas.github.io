@@ -5,21 +5,28 @@
     <description>meeting notes and other articles</description>
     <link>https://uta-douglas.github.io/readings/</link>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 Feb 2026 21:15:56 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 22:52:22 +0000</lastBuildDate>
     <itunes:author>Douglas</itunes:author>
+    <item>
+      <title>UTA CMDB Product</title>
+      <description>UTA CMDB Product.m4a</description>
+      <pubDate>Thu, 26 Feb 2026 22:52:22 +0000</pubDate>
+      <guid isPermaLink="false">UTA CMDB Product.m4a</guid>
+      <enclosure url="https://uta-douglas.github.io/readings/audio/UTA CMDB Product.m4a" length="522475" type="audio/mp4"/>
+    </item>
+    <item>
+      <title>First Take  Veeam’s Agent Commander Signals Backup Tools’ Shift to AI, But CIOs Must Be Cautious</title>
+      <description>First Take_ Veeam’s Agent Commander Signals Backup Tools’ Shift to AI, But CIOs Must Be Cautious.m4a</description>
+      <pubDate>Thu, 26 Feb 2026 22:50:55 +0000</pubDate>
+      <guid isPermaLink="false">First Take_ Veeam’s Agent Commander Signals Backup Tools’ Shift to AI, But CIOs Must Be Cautious.m4a</guid>
+      <enclosure url="https://uta-douglas.github.io/readings/audio/First Take_ Veeam’s Agent Commander Signals Backup Tools’ Shift to AI, But CIOs Must Be Cautious.m4a" length="575051" type="audio/mp4"/>
+    </item>
     <item>
       <title>Hype Cycle for AI in Human Resources, 2025</title>
       <description>Hype Cycle for AI in Human Resources, 2025.m4a</description>
       <pubDate>Thu, 26 Feb 2026 21:07:47 +0000</pubDate>
       <guid isPermaLink="false">Hype Cycle for AI in Human Resources, 2025.m4a</guid>
       <enclosure url="https://uta-douglas.github.io/readings/audio/Hype Cycle for AI in Human Resources, 2025.m4a" length="988037" type="audio/mp4"/>
-    </item>
-    <item>
-      <title>OC Agenda February 2026</title>
-      <description>OC_Agenda_February_2026.m4a</description>
-      <pubDate>Thu, 26 Feb 2026 21:05:39 +0000</pubDate>
-      <guid isPermaLink="false">OC_Agenda_February_2026.m4a</guid>
-      <enclosure url="https://uta-douglas.github.io/readings/audio/OC_Agenda_February_2026.m4a" length="567442" type="audio/mp4"/>
     </item>
     <item>
       <title>How Higher Education 835997 ndx</title>
@@ -36,25 +43,11 @@
       <enclosure url="https://uta-douglas.github.io/readings/audio/20260114_Campus-Solutions-UTA.m4a" length="533195" type="audio/mp4"/>
     </item>
     <item>
-      <title>Resume Siwei Li GIS Analyst 1 1</title>
-      <description>Resume-Siwei Li-GIS Analyst 1 1.m4a</description>
-      <pubDate>Thu, 26 Feb 2026 21:02:52 +0000</pubDate>
-      <guid isPermaLink="false">Resume-Siwei Li-GIS Analyst 1 1.m4a</guid>
-      <enclosure url="https://uta-douglas.github.io/readings/audio/Resume-Siwei Li-GIS Analyst 1 1.m4a" length="567302" type="audio/mp4"/>
-    </item>
-    <item>
       <title>databricks etl to gen ai</title>
       <description>databricks-etl-to-gen-ai.m4a</description>
       <pubDate>Thu, 26 Feb 2026 21:02:00 +0000</pubDate>
       <guid isPermaLink="false">databricks-etl-to-gen-ai.m4a</guid>
       <enclosure url="https://uta-douglas.github.io/readings/audio/databricks-etl-to-gen-ai.m4a" length="757875" type="audio/mp4"/>
-    </item>
-    <item>
-      <title>BAET Job Aid</title>
-      <description>BAET Job Aid.m4a</description>
-      <pubDate>Thu, 26 Feb 2026 20:20:27 +0000</pubDate>
-      <guid isPermaLink="false">BAET Job Aid.m4a</guid>
-      <enclosure url="https://uta-douglas.github.io/readings/audio/BAET Job Aid.m4a" length="574693" type="audio/mp4"/>
     </item>
   </channel>
 </rss>
