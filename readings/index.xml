@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0" xmlns_itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Daily Readings</title>
+    <description>meeting notes and other articles</description>
+    <link>https://uta-douglas.github.io/readings/</link>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 26 Feb 2026 20:46:25 +0000</lastBuildDate>
+    <itunes:author>Douglas</itunes:author>
+    <item>
+      <title>BAET Job Aid</title>
+      <description>BAET Job Aid.m4a</description>
+      <pubDate>Thu, 26 Feb 2026 20:20:27 +0000</pubDate>
+      <guid isPermaLink="false">BAET Job Aid.m4a</guid>
+      <enclosure url="https://uta-douglas.github.io/readings/audio/BAET Job Aid.m4a" length="574693" type="audio/mp4"/>
+    </item>
+    <item>
+      <title>OC_Agenda_February_2026</title>
+      <description>OC_Agenda_February_2026.m4a</description>
+      <pubDate>Thu, 26 Feb 2026 18:22:21 +0000</pubDate>
+      <guid isPermaLink="false">OC_Agenda_February_2026.m4a</guid>
+      <enclosure url="https://uta-douglas.github.io/readings/audio/OC_Agenda_February_2026.m4a" length="460867" type="audio/mp4"/>
+    </item>
+  </channel>
+</rss>
